@@ -97,12 +97,12 @@ export const createNotification = async (kindergarten, parent, type, event) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'khatwaforparents@gmail.com',
-            pass: 'hlkmmfafridbgwnw'
+            user: ENV.email,
+            pass: ENV.pass
         }
         });
-        const accountSid = "ACaf059bd105c2e4d22a2fa048f38c7b51";
-        const authToken = "519163fac15f0054884ec7f81c05cc38";
+        const accountSid = ENV.sid;
+        const authToken = ENV.authtoken;
         const client = twilio(accountSid, authToken);
     let message;
     switch(type){
